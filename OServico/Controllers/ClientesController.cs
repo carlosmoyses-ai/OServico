@@ -11,6 +11,7 @@ using OServico.Models;
 
 namespace OServico.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ClientesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -21,7 +22,6 @@ namespace OServico.Controllers
         }
 
         // GET: Clientes
-
         public async Task<IActionResult> Index()
         {
             return View(await _context.Cliente.ToListAsync());
