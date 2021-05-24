@@ -1,0 +1,90 @@
+﻿@model IEnumerable<OServico.Models.OrdemServico>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataInicial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataFinal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Garantia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescriçãoServico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Defeito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LaudoTecnico)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataInicial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataFinal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Garantia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriçãoServico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Defeito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LaudoTecnico)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.OrdemServicoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.OrdemServicoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.OrdemServicoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
